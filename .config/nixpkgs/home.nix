@@ -7,6 +7,8 @@
 
   services.vscode-server.enable = true;
 
+  home.packages = with pkgs; [ thefuck ];
+
   programs.zsh = {
     enable = true;
     shellAliases = {
