@@ -7,7 +7,7 @@
 
   services.vscode-server.enable = true;
 
-  home.packages = with pkgs; [ thefuck ];
+  home.packages = with pkgs; [ thefuck nodejs ];
 
   programs.zsh = {
     enable = true;
@@ -32,4 +32,11 @@
   };
 
   programs.direnv = { enable = true; };
+
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+    plugins = with pkgs.vimPlugins; [ coc-nvim coc-rust-analyzer ];
+    extraPackages = with pkgs; [ rust-analyzer ];
+  };
 }
